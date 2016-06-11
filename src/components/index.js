@@ -4,6 +4,8 @@ import {
   addAWidget
 } from '../actions/widgets/widgets'
 
+import Widget from './widgets/widget'
+
 class App extends React.Component {
 
   constructor(props) {
@@ -12,16 +14,13 @@ class App extends React.Component {
   }
 
   addAWidget() {
-    console.log('add a widget');
     this.props.addAWidget('addWidget')
   }
 
   renderWidgets() {
-    return this.props.widgets.map((widget) => {
+    return this.props.widgets.map((widget, index) => {
       return (
-        <li>
-          {widget}
-        </li>
+        <Widget key={index} widget={widget} />
       )
     })
   }
@@ -30,7 +29,7 @@ class App extends React.Component {
     return(
       <div>
         <p>List of Widgets</p>
-        <button onClick={this.addAWidget}>Add a Widget</button>
+        <button id='add-btn' onClick={this.addAWidget}>Add a Widget</button>
         <br />
         {this.renderWidgets()}
       </div>
