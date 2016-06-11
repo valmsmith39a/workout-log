@@ -5,20 +5,22 @@ import {
 } from '../actions/widgets/widgets'
 
 import Widget from './widgets/widget'
+import WidgetTextInput from './widgets/widgetTextInput'
 
 class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.addAWidget = this.addAWidget.bind(this)
   }
 
-  addAWidget() {
-    this.props.addAWidget('addWidget')
+  handleSave(text) {
+    console.log('text in handleSave: ', text);
+    this.props.addAWidget(text)
   }
 
   renderWidgets() {
     return this.props.widgets.map((widget, index) => {
+      console.log('widget in render is: ', widget, index);
       return (
         <Widget key={index} widget={widget} />
       )
@@ -26,11 +28,13 @@ class App extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <p>List of Widgets</p>
-        <button id='add-btn' onClick={this.addAWidget}>Add a Widget</button>
         <br />
+        <WidgetTextInput
+          onSave={this.handleSave.bind(this)}
+          placeholder='Describe your workout' />
         {this.renderWidgets()}
       </div>
     )
