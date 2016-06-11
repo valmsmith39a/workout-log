@@ -1,5 +1,5 @@
-import { combineReducers } from 'react-redux'
-import widgets from 'reducer_widgets.js'
+import { combineReducers } from 'redux'
+import widgets from './reducer_widgets'
 
 const reducers = combineReducers({
   widgets: widgets
