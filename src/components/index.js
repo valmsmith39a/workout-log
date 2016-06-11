@@ -13,7 +13,7 @@ class App extends React.Component {
 
   addAWidget() {
     console.log('add a widget');
-    this.props.addAWidget('testing add widget')
+    this.props.addAWidget('addWidget')
   }
 
   renderWidgets() {
