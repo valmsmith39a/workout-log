@@ -1,26 +1,41 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import { connect } from 'react-redux'
-// import {
-//   addAWidget
-// } from '../actions/widgets/widgets'
+import { connect } from 'react-redux'
+import {
+  addAWidget
+} from '../actions/widgets/widgets'
+
+import Widget from './widgets/widget'
+import WidgetTextInput from './widgets/widgetTextInput'
 //
-// import Widget from './widgets/widget'
-// import WidgetTextInput from './widgets/widgetTextInput'
-
 class App extends React.Component {
-  constructor(props) {
-    super(props)
+
+    constructor(props) {
+      super(props)
+    }
+
+    handleSave(text) {
+      console.log('text in handleSave: ', text);
+      if(text.length !== 0) {
+        this.props.addAWidget(text)
+      }
+    }
+
+    render() {
+      return (
+        <div>
+          <p>List of Widgets</p>
+          <br />
+          <WidgetTextInput
+            onSave={this.handleSave.bind(this)}
+            placeholder='Describe your workout' />
+        </div>
+      )
+    }
   }
 
-  render() {
-    return(
-      <div>hello</div>
-    )
-  }
-}
+  export default App
 
-export default App
 
 // class App extends React.Component {
 //
@@ -56,6 +71,7 @@ export default App
 //   }
 // }
 //
+
 // function mapStateToProps(state) {
 //   return state
 // }
