@@ -1,8 +1,8 @@
 
-export function addWidget(text) {
-
+export function addAWidget(text) {
+  console.log('in add a widget action')
   return {
-    type: 'ADD_WIDGET',
+    type: 'ADD_A_WIDGET',
     payload: text
   }
 }

@@ -1,5 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import {
+  addAWidget
+} from '../actions/widgets/widgets'
 
 class App extends React.Component {
 
@@ -10,12 +13,17 @@ class App extends React.Component {
 
   addAWidget() {
     console.log('add a widget');
+    this.props.addAWidget('testing add widget')
   }
 
   renderWidgets() {
-    return (
-      <div>one widget</div>
-    )
+    return this.props.widgets.map((widget) => {
+      return (
+        <li>
+          {widget}
+        </li>
+      )
+    })
   }
 
   render() {
@@ -30,4 +38,8 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, null)(App)
+function mapStateToProps(state) {
+  return state
+}
+
+export default connect(mapStateToProps, { addAWidget })(App)
