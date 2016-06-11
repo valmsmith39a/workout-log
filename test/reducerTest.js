@@ -7,9 +7,22 @@ describe('widgets reducer', () => {
       reducer(undefined, {})
     ).toEqual([
         'default post'
-      // {
-      //   text: 'default post'
-      // }
     ])
+  })
+
+  it('should handle ADD_A_WIDGET', () => {
+    expect(
+      reducer(
+        [],
+        {
+          type: 'ADD_A_WIDGET',
+          text: 'first post'
+        }
+      )
+    ).toEqual(
+      [
+        'first post'
+      ]
+    )
   })
 })
