@@ -28,7 +28,6 @@ module.exports = {
     filename: 'bundle.js'
   },
   entry: [
-    // 'whatwg-fetch',
     // 'babel-polyfill',
     './src/index.js'
   ]
