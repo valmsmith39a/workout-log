@@ -14,12 +14,12 @@ export class App extends React.Component {
     constructor(props) {
       super(props)
       this.props.getWidgets()
-      .then(res => { console.log('res: ', res)})
     }
 
     handleSave(text) {
       if(text.length !== 0) {
         this.props.addAWidget(text)
+        .then(res => { console.log('res',res)})
       }
     }
 

@@ -12,7 +12,7 @@ require('./style/style.scss')
 import reducers from './reducers/index'
 
 ReactDOM.render(
-  <Provider store={createStore(reducers, applyMiddleware(promise))}>
+  <Provider store={createStore(reducers, applyMiddleware(thunk))}>
     <App />
   </Provider>,
   document.getElementById('app')
