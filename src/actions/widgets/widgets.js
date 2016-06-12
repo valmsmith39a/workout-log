@@ -1,47 +1,41 @@
 
 import axios from 'axios'
 
-// export function getWidgets() {
-//   const request = axios.get('/widgets')
-//   return {
-//     type: 'GET_WIDGETS',
-//     payload: request
-//   }
-// }
-
-function fetchTodosRequest() {
+function fetchWidgetsRequest() {
   return {
-    type: 'GET_WIDGETS'
+    type: 'FETCH_WIDGETS_REQUEST'
   }
 }
 
-function fetchTodosSuccess(body) {
-  console.log('fetch success: ', body);
+function fetchWidgetsSuccess(body) {
   return {
-    type: 'GET_WIDGETS_SUCCESS',
-    body: body
+    type: 'FETCH_WIDGETS_SUCCESS',
+    body
   }
 }
 
-function fetchTodosFailure(ex) {
+function fetchWidgetsFailure(ex) {
   return {
-    type: 'GET_WIDGETS_FAILURE',
+    type: 'FETCH_WIDGETS_FAILURE',
     ex
   }
 }
 
-export function getWidgets() {
-  console.log('in get Widgets');
+/* own: return a function with a single argument that thunk executes and passes in dispatch which is
+   a function that takes an action and returns _dispatch(action).
+   We pass in fetchWidgetsRequest() which returns an action, to dispatch function (which doesn't seem to do anything)
+   We return a fetch which is a promise
+   When the promise resolves, we dispatch a second action with the type and payload
+*/
 
+export function getWidgets() {
   return dispatch => {
-    dispatch(fetchTodosRequest())
+    dispatch(fetchWidgetsRequest())
     return fetch('/widgets')
       .then(res => res.json())
-      .then(json => dispatch(fetchTodosSuccess(json)))
-      .catch(ex => dispatch(fetchTodosFailure(ex)))
+      .then(json => dispatch(fetchWidgetsSuccess(json)))
+      .catch(ex => dispatch(fetchWidgetsFailure(ex)))
   }
-
-
 }
 
 export function addAWidget(text) {
