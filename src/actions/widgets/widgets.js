@@ -1,5 +1,6 @@
 
 import axios from 'axios'
+var fetch = require('node-fetch')
 
 function fetchWidgetsRequest() {
   return {
@@ -31,8 +32,8 @@ function fetchWidgetsFailure(ex) {
 export function getWidgets() {
   return dispatch => {
     dispatch(fetchWidgetsRequest())
-    return fetch('/widgets')
-      .then(res => res.json())
+    return fetch('http://localhost/widgets')
+      .then(res => (res.json())
       .then(json => dispatch(fetchWidgetsSuccess(json)))
       .catch(ex => dispatch(fetchWidgetsFailure(ex)))
   }
