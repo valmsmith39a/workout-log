@@ -46,7 +46,6 @@ export class App extends React.Component {
   }
 
   function mapStateToProps(state) {
-    console.log('state is: ', state);
     return state
   }
 

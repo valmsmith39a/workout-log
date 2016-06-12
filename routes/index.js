@@ -7,7 +7,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/widgets', function(req, res, next) {
-  console.log('in get route widgets whooohooo');
   res.send(['first post', 'second post', 'third post'])
 })
 
