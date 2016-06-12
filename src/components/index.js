@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import {
+  getWidgets,
   addAWidget
 } from '../actions/widgets/widgets'
 
@@ -12,6 +13,8 @@ export class App extends React.Component {
 
     constructor(props) {
       super(props)
+      this.props.getWidgets()
+      .then(res => { console.log('res: ', res)})
     }
 
     handleSave(text) {
@@ -43,7 +46,8 @@ export class App extends React.Component {
   }
 
   function mapStateToProps(state) {
+    console.log('state is: ', state);
     return state
   }
 
-  export default connect(mapStateToProps, { addAWidget })(App)
+  export default connect(mapStateToProps, { getWidgets, addAWidget })(App)

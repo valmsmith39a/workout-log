@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/', function(req, res, next) {
+router.get('/widgets', function(req, res, next) {
   console.log('in get route');
   res.send(['first post', 'second post', 'third post'])
 })

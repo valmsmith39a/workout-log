@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 export function getWidgets() {
-  const request = axios.get('/')
+  const request = axios.get('/widgets')
   return {
     type: 'GET_WIDGETS',
     payload: request
