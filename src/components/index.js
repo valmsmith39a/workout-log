@@ -36,7 +36,7 @@ export class App extends React.Component {
           <WidgetTextInput
             onSave={this.handleSave.bind(this)}
             placeholder='Describe your workout' />
-          {/*}{this.renderWidgets()}*/}
+            {this.renderWidgets()}
         </div>
       )
     }

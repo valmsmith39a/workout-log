@@ -1,6 +1,15 @@
 
+import axios from 'axios'
+
+export function getWidgets() {
+  const request = axios.get('/')
+  return {
+    type: 'GET_WIDGETS',
+    payload: request
+  }
+}
+
 export function addAWidget(text) {
-  console.log('text in add widget action: ', text);
   return {
     type: 'ADD_A_WIDGET',
     text

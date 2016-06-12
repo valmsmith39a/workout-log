@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
+import promise from 'redux-promise'
+
 import App from './components/index'
 
 require('./style/style.scss')
@@ -9,7 +12,7 @@ require('./style/style.scss')
 import reducers from './reducers/index'
 
 ReactDOM.render(
-  <Provider store={createStore(reducers)}>
+  <Provider store={createStore(reducers, applyMiddleware(promise))}>
     <App />
   </Provider>,
   document.getElementById('app')
