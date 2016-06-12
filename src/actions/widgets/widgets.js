@@ -33,7 +33,7 @@ export function getWidgets() {
   return dispatch => {
     dispatch(fetchWidgetsRequest())
     return fetch('http://localhost/widgets')
-      .then(res => (res.json())
+      .then(res => res.json())
       .then(json => dispatch(fetchWidgetsSuccess(json)))
       .catch(ex => dispatch(fetchWidgetsFailure(ex)))
   }

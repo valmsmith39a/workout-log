@@ -32,7 +32,6 @@ describe('async actions', () => {
 
     return store.dispatch(actions.getWidgets())
       .then(() => {
-        console.log('store: ', store.getActions());
         expect(store.getActions()).toEqual(expectedActions)
       })
   })
