@@ -17,12 +17,21 @@ import Widget from './widget'
   call widgets component
 */
 
+/*
+  Notes:
+
+  JSX spread attributes:
+    {...widgets}
+    https://facebook.github.io/react/docs/jsx-spread.html
+*/
+
 const ListOfWidgets = ({
   widgets
 }) => (
   <div>
     <ul>
       {widgets.map(widget => {
+        console.log('widget: ', widget);
         return (<Widget
           key={widget.id}
           {...widget}

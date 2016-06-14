@@ -46,9 +46,12 @@ export function getWidgets() {
   }
 }
 
+var nextWidgetId = 1;
+
 export function addAWidget(text) {
   return {
     type: 'ADD_A_WIDGET',
+    id: nextWidgetId++,
     text
   }
 }

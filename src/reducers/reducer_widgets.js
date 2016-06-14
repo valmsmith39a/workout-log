@@ -12,7 +12,13 @@ export default function (state = INITIAL_STATE, action) {
     case 'FETCH_WIDGETS_FAILURE':
       return state
     case 'ADD_A_WIDGET':
-      return [...state, action.text]
+      return [
+        ...state,
+        {
+          id: action.id,
+          text: action.text
+        }
+      ]
     default:
       return state
   }

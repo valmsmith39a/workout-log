@@ -9,8 +9,13 @@ import React from 'react'
   - Often functional components
 */
 
-const Widget = ({ text }) => (
-  <li>
+const Widget = ({
+  text,
+  onClick
+}) => (
+  <li
+    onClick={onClick}
+  >
     {text}
   </li>
 )

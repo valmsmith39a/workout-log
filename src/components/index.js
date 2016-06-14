@@ -24,12 +24,8 @@ export class App extends React.Component {
     this.handleSaveWidget = this.handleSaveWidget.bind(this)
   }
 
-  handleSaveWidget(object) {
-    let customObject = {
-      id:111,
-      text: object
-    }
-    this.props.addAWidget(customObject)
+  handleSaveWidget(text) {
+    this.props.addAWidget(text)
   }
 
   render() {
