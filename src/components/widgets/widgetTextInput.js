@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 // export default class WidgetTextInput extends React.Component {
 //   handleSave() {
 //     this.props.onSave(this.refs.inputText.value)

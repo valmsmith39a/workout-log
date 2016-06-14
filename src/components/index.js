@@ -7,7 +7,7 @@ import {
 } from '../actions/widgets/widgets'
 
 import Widget from './widgets/widget'
-import WidgetTextInput from './widgets/widgetTextInput'
+import AddWidget from './widgets/addAWidget'
 
 export class App extends React.Component {
   /*
@@ -24,7 +24,7 @@ export class App extends React.Component {
   render() {
     return(
       <div>
-        Input box, Input button
+        <AddWidget />
         <br />
         List of widgets
       </div>
