@@ -16,14 +16,21 @@ import Widget from './widget'
   get an array of widgets
   call widgets component
 */
-const ListOfWidgets = ({ widgets }) => (
-    <div>
-      <ul>
-        {widgets.map( widget => {
-          return <Widget widget={widget} />
-        })}
-      </ul>
-    </div>
+
+const ListOfWidgets = ({
+  widgets
+}) => (
+  <div>
+    <ul>
+      {widgets.map(widget => {
+        return (<Widget
+          key={widget.id}
+          {...widget}
+        />)
+      }
+      )}
+    </ul>
+  </div>
 )
 
 export default ListOfWidgets

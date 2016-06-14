@@ -9,9 +9,9 @@ import React from 'react'
   - Often functional components
 */
 
-const Widget = ({ widget }) => (
+const Widget = ({ text }) => (
   <li>
-    {widget.text}
+    {text}
   </li>
 )
 
