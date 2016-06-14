@@ -1,14 +1,18 @@
 import React from 'react'
 
-console.log('in widget.js');
+/*
+  Presentational component:
+  - Concerned with how things look
+  - No Redux actions
+  - Don't specify how data is loaded or mutated
+  - Receives data and callbacks exclusively through props
+  - Often functional components
+*/
 
-const Widget = ({ widget }) => {
-
-  return (
-    <li>
-      A Single Widget
-    </li>
-  )
-}
+const Widget = ({ widget }) => (
+  <li>
+    {widget.text}
+  </li>
+)
 
 export default Widget

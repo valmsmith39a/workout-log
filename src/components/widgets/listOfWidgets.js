@@ -16,9 +16,7 @@ import Widget from './widget'
   get an array of widgets
   call widgets component
 */
-const ListOfWidgets = ({ widgets }) => {
-  console.log('widgets in ListOfWidgets: ', widgets);
-  return (
+const ListOfWidgets = ({ widgets }) => (
     <div>
       <ul>
         {widgets.map( widget => {
@@ -26,7 +24,6 @@ const ListOfWidgets = ({ widgets }) => {
         })}
       </ul>
     </div>
-  )
-}
+)
 
 export default ListOfWidgets
