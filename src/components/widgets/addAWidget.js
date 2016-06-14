@@ -14,12 +14,19 @@ import React from 'react'
 */
 
 const AddAWidget = ({ handleSaveWidget }) => {
-  let input;
+  let input
 
   return(
     <div>
-      <input />
-      <button onClick={ handleSaveWidget }>Create</button>
+      <input ref={node => {
+        input = node
+      }} />
+      <button onClick={() => {
+        handleSaveWidget(input.value)
+        input.value = ''
+      }}>
+        Create
+      </button>
     </div>
   )
 }
