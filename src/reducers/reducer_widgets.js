@@ -1,4 +1,9 @@
-const INITIAL_STATE = ['default post']
+const INITIAL_STATE = [
+  {
+    id:0,
+    text:'Default post'
+  }
+]
 
 export default function (state = INITIAL_STATE, action) {
   switch(action.type) {

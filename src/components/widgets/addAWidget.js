@@ -8,11 +8,6 @@ import React from 'react'
   - Often functional components
 */
 
-/*
-  Need a input box
-  Need a button
-*/
-
 const AddAWidget = ({ handleSaveWidget }) => {
   let input
 

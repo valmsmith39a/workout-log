@@ -8,6 +8,7 @@ import {
 
 import Widget from './widgets/widget'
 import AddWidget from './widgets/addAWidget'
+import ListOfWidgets from './widgets/ListOfWidgets'
 
 export class App extends React.Component {
   /*
@@ -19,11 +20,16 @@ export class App extends React.Component {
 
   constructor(props) {
     super(props)
+
     this.handleSaveWidget = this.handleSaveWidget.bind(this)
   }
 
-  handleSaveWidget() {
-    console.log('in handleSaveWidget');
+  handleSaveWidget(object) {
+    let customObject = {
+      id:111,
+      text: object
+    }
+    this.props.addAWidget(customObject)
   }
 
   render() {
@@ -31,13 +37,14 @@ export class App extends React.Component {
       <div>
         <AddWidget handleSaveWidget={this.handleSaveWidget}/>
         <br />
-        List of widgets
+        <ListOfWidgets widgets={this.props.widgets}/>
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
+  console.log('state is: ', state );
   return state
 }
 

@@ -1,7 +1,14 @@
 import React from 'react'
 
-// export default ({ widget }) => (
-//   <li>
-//     {widget}
-//   </li>
-// )
+console.log('in widget.js');
+
+const Widget = ({ widget }) => {
+
+  return (
+    <li>
+      A Single Widget
+    </li>
+  )
+}
+
+export default Widget
