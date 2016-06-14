@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Widget from './widget'
+import LikeButton from './likeButton'
 
 /*
   Presentational component:
@@ -31,10 +32,16 @@ const ListOfWidgets = ({
   <div>
     <ul>
       {widgets.map(widget => {
-        return (<Widget
-          key={widget.id}
-          {...widget}
-        />)
+        return (
+          <div key={widget.id}>
+            <Widget
+              {...widget}
+            />
+            <LikeButton
+            />
+          </div>
+
+        )
       }
       )}
     </ul>
