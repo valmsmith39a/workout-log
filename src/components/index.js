@@ -19,12 +19,17 @@ export class App extends React.Component {
 
   constructor(props) {
     super(props)
+    this.handleSaveWidget = this.handleSaveWidget.bind(this)
+  }
+
+  handleSaveWidget() {
+    console.log('in handleSaveWidget');
   }
 
   render() {
     return(
       <div>
-        <AddWidget />
+        <AddWidget handleSaveWidget={this.handleSaveWidget}/>
         <br />
         List of widgets
       </div>
