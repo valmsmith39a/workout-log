@@ -4,7 +4,6 @@ import * as actions from '../src/actions/widgets/widgets'
 import nock from 'nock'
 import expect from 'expect'
 
-
 const middlewares = [ thunk ]
 const mockStore = configureMockStore(middlewares)
 

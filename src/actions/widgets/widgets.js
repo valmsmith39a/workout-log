@@ -1,6 +1,13 @@
 
 import axios from 'axios'
-var fetch = require('node-fetch')
+/*
+  Problem using node-fetch with webpack
+  https://github.com/bitinn/node-fetch/issues/41
+
+  But need node-fetch when testing with Mocha bc
+  Babel does not yet support fetch() in ES6
+*/
+// var fetch = require('node-fetch')
 
 function fetchWidgetsRequest() {
   return {

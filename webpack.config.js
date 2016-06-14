@@ -1,8 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
 
-import 'whatwg-fetch'
-
 module.exports = {
   module: {
     loaders: [
@@ -28,7 +26,6 @@ module.exports = {
     filename: 'bundle.js'
   },
   entry: [
-    // 'babel-polyfill',
     './src/index.js'
   ]
 }
