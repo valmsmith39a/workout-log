@@ -31,7 +31,6 @@ const ListOfWidgets = ({
   <div>
     <ul>
       {widgets.map(widget => {
-        console.log('widget: ', widget);
         return (<Widget
           key={widget.id}
           {...widget}

@@ -11,6 +11,7 @@ import AddWidget from './widgets/addAWidget'
 import ListOfWidgets from './widgets/ListOfWidgets'
 
 export class App extends React.Component {
+
   /*
     Container component:
     - How things work
@@ -31,59 +32,16 @@ export class App extends React.Component {
   render() {
     return(
       <div>
-        <AddWidget handleSaveWidget={this.handleSaveWidget}/>
+        <AddWidget handleSaveWidget={this.handleSaveWidget} />
         <br />
-        <ListOfWidgets widgets={this.props.widgets}/>
+        <ListOfWidgets widgets={this.props.widgets} />
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  console.log('state is: ', state );
   return state
 }
 
 export default connect(mapStateToProps, { getWidgets, addAWidget })(App)
-
-// export class App extends React.Component {
-//
-//     constructor(props) {
-//       super(props)
-//       this.props.getWidgets()
-//     }
-//
-//     handleSave(text) {
-//       if(text.length !== 0) {
-//         this.props.addAWidget(text)
-//         .then(res => { console.log('res',res)})
-//       }
-//     }
-//
-//     renderWidgets() {
-//       return this.props.widgets.map((widget, index) => {
-//         return (
-//           <Widget key={index} widget={widget} />
-//         )
-//       })
-//     }
-//
-//     render() {
-//       return (
-//         <div>
-//           <p>List of Widgets</p>
-//           <br />
-//           <WidgetTextInput
-//             onSave={this.handleSave.bind(this)}
-//             placeholder='Describe your workout' />
-//             {this.renderWidgets()}
-//         </div>
-//       )
-//     }
-//   }
-//
-//   function mapStateToProps(state) {
-//     return state
-//   }
-//
-//   export default connect(mapStateToProps, { getWidgets, addAWidget })(App)
